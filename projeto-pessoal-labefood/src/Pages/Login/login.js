@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Main, Form, ButtonStyled, InputMaterial } from "./styled";
+import { Main, Form, ButtonStyled, InputMaterial, DivPassword } from "./styled";
 import  IconButton from "@mui/material/IconButton";
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -13,23 +13,37 @@ const Login = () => {
         setShowPassword(!showPassword);
     }
 
+    const onSubmitLogin = (event) => {
+        event.preventDefault();
+        console.log({email, password});
+    }
+
+
     return(
         <Main>
             <p>Entrar</p>
-            <Form>
+            <Form onSubmit={onSubmitLogin}>
             <InputMaterial 
             id="outlined-basic"
             label="Email"
             type={'email'}
             variant="outlined" 
+            placeholder={'Email'}
+            onChange={(event)=>setEmail(event.target.value)}
+            required
             />
 
-            <divPassword>
+            <DivPassword>
             <InputMaterial 
             id="outlined-basic" 
             label="Password"
             type={showPassword ? 'password' : 'text'}
-            variant="outlined" 
+            variant="outlined"
+            placeholder={'Mínimo 6 caracteres'}
+            inputProps={{pattern:'.{6,}', title:'Mínimo 6 caracteres'}}
+            onChange={(event)=>setPassword(event.target.value)}
+            required
+
              
              />
             <IconButton
@@ -39,7 +53,7 @@ const Login = () => {
             >
             { showPassword ? <VisibilityOff /> : <Visibility />}
             </IconButton>
-            </divPassword>
+            </DivPassword>
 
              <ButtonStyled type='submit'>Entrar</ButtonStyled>
             </Form>
