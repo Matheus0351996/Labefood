@@ -15,7 +15,7 @@ export const Main = styled.main`
     flex-direction:column;
     align-items:center;
     p{
-        font-size:2rem;
+        font-size:1rem;
     }
 `
 
