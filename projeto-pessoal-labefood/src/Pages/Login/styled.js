@@ -15,7 +15,7 @@ export const Main = styled.main`
     flex-direction:column;
     align-items:center;
     p{
-        font-size:2rem;
+        font-size:1rem;
     }
 `
 
@@ -34,8 +34,9 @@ export const ButtonStyled = styled(Button)`
  }
 `
 
-export const divPassword = styled.div`
+export const DivPassword = styled.div`
 display:flex;
+width:80%;
 align-items: center;
 justify-content: space-between;
 `
