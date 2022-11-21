@@ -54,6 +54,7 @@ const SignUp = () => {
             setCheckErrPassword(false);
             
         }
+        signUpPerson();
         cleanFields()
     }
 
