@@ -1,3 +1,4 @@
+import { Button, TextField } from "@mui/material";
 import styled from "styled-components";
 
 export const Main = styled.main`
@@ -20,4 +21,14 @@ form{
 p{
     font-size:2rem;
 }
+`
+
+export const InputMaterial =styled(TextField)`
+width: 100%;
+`
+export const ButtonStyled = styled(Button)`
+ &&{
+    color:#000;
+    background-color:#E8222E;
+ }
 `
