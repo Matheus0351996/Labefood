@@ -52,7 +52,6 @@ const SignUp = () => {
             setCheckErrPassword(true);
         }else{
             setCheckErrPassword(false);
-            signUpPerson()
             
         }
         cleanFields()
@@ -61,13 +60,15 @@ const SignUp = () => {
         const signUpPerson = async () =>{
             await axios.post(`${BASE_URL}/signup`, form)
             .then((res)=>{
-                console.log(res.data);
                 localStorage.setItem("token", res.data.token);
                 alert(`Boas vindas! ${res.data.user.name}`)
                 goToSignUpAdress(navigate)
             })
             .catch((err)=>{
-                console.log(err.response.data);
+                
+                alert('Email ou CPF já cadastrados')
+                cleanFields()
+                setConfirmPassword('')
             })
         }
 
