@@ -53,7 +53,6 @@ const SignUpAdress = () => {
             <form onSubmit={onSubmitFormAdress}>
             <InputMaterial 
                 id="outlined-basic"
-                label={"Logradouro"}
                 name='street'
                 type={'text'}
                 value = {form.street}
