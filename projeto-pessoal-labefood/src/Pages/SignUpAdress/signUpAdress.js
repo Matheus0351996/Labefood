@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import { ButtonStyled, InputMaterial, Main } from "./styled";
 import useForm from '../../Hooks/useForm'
+import axios from "axios";
+import { BASE_URL } from "../../Constants/url";
+import { useNavigate } from "react-router-dom";
+import { goToFeed } from "../../Routes/coordinator";
+
 
 const SignUpAdress = () => {
     const [logradouro, setLogradouro] =useState('');
+
+
+    const navigate = useNavigate()
 
     const { form, onChange, cleanFields} = useForm ({
         "street": "",
@@ -16,21 +24,35 @@ const SignUpAdress = () => {
 
     const onSubmitFormAdress = (event) => {
         event.preventDefault()
-        console.log(form);
+        addAdress()
+        goToFeed(navigate)
     }
 
 
 
+    const addAdress = async () =>{
+        const token = localStorage.getItem('token')
+        console.log(form);
+        await axios.put(`${BASE_URL}/address`,form,{
+            headers:{
+            auth:token
+            }
+        })
+        .then((res)=>{
+            localStorage.setItem('token', res.data.token)
+        })
+        .catch((err)=>{
+            console.log(err.response);
+        })
+    }
 
 
-    
     return(
         <Main>
             <p>Meu Endereço</p>
             <form onSubmit={onSubmitFormAdress}>
             <InputMaterial 
                 id="outlined-basic"
-                label={"Logradouro"}
                 name='street'
                 type={'text'}
                 value = {form.street}
