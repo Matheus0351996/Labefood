@@ -2,8 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CardRestaurant from "../../Components/CardRestaurant/cardRestaurant";
 import { BASE_URL } from "../../Constants/url";
+import Header from "../../Header/header";
 import { useProtectedPage } from "../../Hooks/useProtectedPage";
-import { InputMaterial, Main, WrapperCardsRestaurant } from "./styled";
+import { ContainerFeed, InputSearch, WrapperCardsRestaurant } from "./styled";
 
 const Feed = () => {
     const [restaurants, setRestaurants] = useState([])
@@ -30,7 +31,9 @@ const Feed = () => {
 
     useProtectedPage()
     return(
-        <Main>
+        <ContainerFeed>
+            <Header title={"Rappi4"}/>
+
             {/* <InputMaterial 
                 id="outlined-basic"
                 name='restaurants'   
@@ -42,6 +45,9 @@ const Feed = () => {
             /> */}
 
             <WrapperCardsRestaurant>
+            <InputSearch
+                placeholder="Restaurante"
+            />
                 {
                     restaurants.map((restaurant)=>{
                         return(
@@ -53,7 +59,7 @@ const Feed = () => {
                     })
                 }
             </WrapperCardsRestaurant>
-        </Main>
+        </ContainerFeed>
     )
 }
 export default Feed
