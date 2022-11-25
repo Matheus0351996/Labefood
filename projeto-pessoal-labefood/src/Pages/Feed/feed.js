@@ -4,10 +4,12 @@ import CardRestaurant from "../../Components/CardRestaurant/cardRestaurant";
 import { BASE_URL } from "../../Constants/url";
 import Header from "../../Header/header";
 import { useProtectedPage } from "../../Hooks/useProtectedPage";
-import { ContainerFeed, InputSearch, WrapperCardsRestaurant } from "./styled";
+import { BoxInputSearch, ContainerFeed, InputSearch, Menu, MenuItem, WrapperCardsRestaurant } from "./styled";
 
 const Feed = () => {
     const [restaurants, setRestaurants] = useState([])
+    const [inputText, setInputText] = useState("")
+
 
 
     const getRestaurants = () => {
@@ -28,13 +30,50 @@ const Feed = () => {
         getRestaurants()
     }, [])
     
+    const filterRestaurant = restaurants.filter((restaurant)=>
+       inputText ? restaurant.name.toLowerCase().includes(inputText.toLowerCase()):true
+    ).map((restaurant, index)=>{
+        return <CardRestaurant restaurant={restaurant} key={index} />
+    })
+
+
+    console.log(filterRestaurant);
 
     useProtectedPage()
     return(
         <ContainerFeed>
             <Header title={"Rappi4"}/>
+            <BoxInputSearch>
+            <InputSearch
+                placeholder="Restaurante"
+                value={inputText}
+                onChange={(e)=>setInputText(e.target.value)}
+            />
+            </BoxInputSearch>
+            <Menu>
+                <MenuItem select={true}>Burguer</MenuItem>
+                <MenuItem select={false}>Asiática</MenuItem>
+                <MenuItem select={false}>Massas</MenuItem>
+                <MenuItem select={false}>Saudáveis</MenuItem>
+                <MenuItem select={false}>Burguer</MenuItem>
+                <MenuItem select={false}>Burguer</MenuItem>
+            </Menu>
+            <WrapperCardsRestaurant>
+                {
+                 filterRestaurant
+                }
+            </WrapperCardsRestaurant>
+        </ContainerFeed>
+    )
+}
+export default Feed
 
-            {/* <InputMaterial 
+
+
+
+
+
+     {/* <InputMaterial 
                 id="outlined-basic"
                 name='restaurants'   
                 type={'text'}
@@ -43,23 +82,3 @@ const Feed = () => {
                 placeholder={'Restaurante'}
                 onChange={(event)=>setRestaurants(event.target.value)}
             /> */}
-
-            <WrapperCardsRestaurant>
-            <InputSearch
-                placeholder="Restaurante"
-            />
-                {
-                    restaurants.map((restaurant)=>{
-                        return(
-                            <CardRestaurant
-                            restaurant={restaurant}
-                            
-                            />
-                        )
-                    })
-                }
-            </WrapperCardsRestaurant>
-        </ContainerFeed>
-    )
-}
-export default Feed
