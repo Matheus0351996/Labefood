@@ -9,6 +9,7 @@ import { BoxInputSearch, ContainerFeed, InputSearch, Menu, MenuItem, WrapperCard
 const Feed = () => {
     const [restaurants, setRestaurants] = useState([])
     const [inputText, setInputText] = useState("")
+    const [categoryRestaurant, setCategoryRestaurant] = useState([])
 
 
 
@@ -21,6 +22,7 @@ const Feed = () => {
         .then((res)=>{
             console.log(res.data);
             setRestaurants(res.data.restaurants)
+            filterCategory(res.data.restaurants)
         })
         .catch((err)=>{
             console.log(err);
@@ -29,6 +31,18 @@ const Feed = () => {
     useEffect(()=>{
         getRestaurants()
     }, [])
+
+    const filterCategory = (restaurants) =>{
+        const arrayAux = []
+        restaurants.map((res)=>{
+            arrayAux.push(res.category)
+        })
+        const takeOutRepeat = [...new Set(arrayAux)]
+        setCategoryRestaurant(takeOutRepeat)
+    }
+    console.log(categoryRestaurant);
+
+
     
     const filterRestaurant = restaurants.filter((restaurant)=>
        inputText ? restaurant.name.toLowerCase().includes(inputText.toLowerCase()):true
@@ -37,7 +51,7 @@ const Feed = () => {
     })
 
 
-    console.log(filterRestaurant);
+    console.log(restaurants);
 
     useProtectedPage()
     return(
@@ -51,12 +65,12 @@ const Feed = () => {
             />
             </BoxInputSearch>
             <Menu>
-                <MenuItem select={true}>Burguer</MenuItem>
-                <MenuItem select={false}>Asiática</MenuItem>
-                <MenuItem select={false}>Massas</MenuItem>
-                <MenuItem select={false}>Saudáveis</MenuItem>
-                <MenuItem select={false}>Burguer</MenuItem>
-                <MenuItem select={false}>Burguer</MenuItem>
+                {
+                    categoryRestaurant.map((category,index) =>{
+                        return <MenuItem select={false}> {category}</MenuItem>
+                    })
+                }
+
             </Menu>
             <WrapperCardsRestaurant>
                 {
