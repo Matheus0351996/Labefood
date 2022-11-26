@@ -40,9 +40,14 @@ const Feed = () => {
             arrayAux.push(res.category)
         })
         const takeOutRepeat = [...new Set(arrayAux)]
-        setCategoryRestaurant(takeOutRepeat)
+        const changeObjectArray = [];
+        takeOutRepeat.map((category)=>{
+            const insertObject = {category, select:false}
+            changeObjectArray.push(insertObject)
+        })
+        setCategoryRestaurant(changeObjectArray)
+        console.log(changeObjectArray);
     }
-    console.log(categoryRestaurant);
 
 
     
@@ -57,7 +62,24 @@ const Feed = () => {
     })
 
 
-    console.log(restaurants);
+    const changeCategory = (category) =>{
+        setValueCategory(category)
+        
+        const result = categoryRestaurant.map((cat)=>{
+            if(cat.category === category){
+                return {
+                    ...cat,
+                    select:true
+                }
+            }else{
+                return{
+                    ...cat,
+                    select:false
+                }
+            }
+        })
+        setCategoryRestaurant(result);
+    }
 
     useProtectedPage()
     return(
@@ -79,11 +101,12 @@ const Feed = () => {
 
                 {
                     categoryRestaurant.map((category,index) =>{
+                    
                         return (<MenuItem
-                             select={false}
-                             onClick={()=>setValueCategory(category)}
+                             select={category.select}
+                             onClick={()=>changeCategory(category.category)}
                              >
-                                 {category}
+                                 {category.category}
                                </MenuItem>)
 
                     })
