@@ -10,8 +10,10 @@ const Feed = () => {
     const [restaurants, setRestaurants] = useState([])
     const [inputText, setInputText] = useState("")
     const [categoryRestaurant, setCategoryRestaurant] = useState([])
+    const [valueCategory, setValueCategory] = useState("")
 
 
+    console.log(valueCategory);
 
     const getRestaurants = () => {
         axios.get (`${BASE_URL}/restaurants`, {
@@ -44,9 +46,13 @@ const Feed = () => {
 
 
     
-    const filterRestaurant = restaurants.filter((restaurant)=>
-       inputText ? restaurant.name.toLowerCase().includes(inputText.toLowerCase()):true
-    ).map((restaurant, index)=>{
+    const filterRestaurant = restaurants
+    .filter((restaurant)=>
+       inputText ? restaurant.name.toLowerCase().includes(inputText.toLowerCase()): true )
+    .filter((restaurant)=>
+        valueCategory ? restaurant.category.toLowerCase().includes(valueCategory.toLowerCase()) : true )
+    
+    .map((restaurant, index)=>{
         return <CardRestaurant restaurant={restaurant} key={index} />
     })
 
@@ -65,9 +71,21 @@ const Feed = () => {
             />
             </BoxInputSearch>
             <Menu>
+            <MenuItem
+            onClick={()=>setValueCategory("")}
+                 >
+             Todos
+            </MenuItem>
+
                 {
                     categoryRestaurant.map((category,index) =>{
-                        return <MenuItem select={false}> {category}</MenuItem>
+                        return (<MenuItem
+                             select={false}
+                             onClick={()=>setValueCategory(category)}
+                             >
+                                 {category}
+                               </MenuItem>)
+
                     })
                 }
 
