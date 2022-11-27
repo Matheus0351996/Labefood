@@ -1,10 +1,42 @@
-import React from "react";
+import axios from "axios";
+import React, {useEffect, useState} from "react";
+import { useParams } from "react-router-dom";
+import CardRestaurantDetails from "../../Components/CardRestaurantDetails/cardRestaurantDetails";
+import { BASE_URL } from "../../Constants/url";
+import { CardRestaurant, ContainerRestaurant} from "./styled"
 
-const Restaurants = () => {
+const Restaurant = () => {
+    const {restaurantsId} = useParams()
+    const [restaurant, setRestaurant] = useState({})
+
+
+    
+    const getRestaurant = () => {
+        axios.get(`${BASE_URL}/restaurants/${restaurantsId}`,{
+            headers:{
+                auth: window.localStorage.getItem('token')
+            }
+        })
+        .then((res)=>{
+            setRestaurant(res.data.restaurant)
+            console.log(res.data);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+        
+    }
+
+    useEffect(() => {
+        getRestaurant()
+    }, []) 
+    
     return(
-        <div>
-            Restaurants
-        </div>
+        <ContainerRestaurant>
+            <CardRestaurant>
+             <CardRestaurantDetails    restaurant={restaurant}/>
+            </CardRestaurant>
+        </ContainerRestaurant>
     )
 }
-export default Restaurants
+export default Restaurant
