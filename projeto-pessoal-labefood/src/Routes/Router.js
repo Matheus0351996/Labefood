@@ -15,6 +15,7 @@ import SignUpAdress from "../Pages/SignUpAdress/signUpAdress"
                 <Route index element={<Login/>}/>
                 <Route path="/signUp" element={<SignUp/>}/>
                 <Route path="/signUp/adress" element={<SignUpAdress/>}/>
+                {/* <Route path="/adressEdit/:id" element={<AdressEdit/>}/> */}
                 <Route path="/feed" element={<Feed/>}/>
                 <Route path="/feed/:restaurantsId" element={<Restaurants/>}/>
                 <Route path="/profile" element={<Profile/>}/>
