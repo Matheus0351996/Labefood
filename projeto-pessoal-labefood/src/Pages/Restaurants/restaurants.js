@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
+import CardProduct from "../../Components/CardProduct/cardProduct";
 import CardRestaurantDetails from "../../Components/CardRestaurantDetails/cardRestaurantDetails";
 import { BASE_URL } from "../../Constants/url";
 import { CardRestaurant, ContainerRestaurant} from "./styled"
@@ -35,6 +36,13 @@ const Restaurant = () => {
         <ContainerRestaurant>
             <CardRestaurant>
              <CardRestaurantDetails    restaurant={restaurant}/>
+            {
+                restaurant.products?.map((product, index)=>{
+                    return <div key={index}><CardProduct  product={product}/>
+                    </div>
+                })
+    
+            }
             </CardRestaurant>
         </ContainerRestaurant>
     )
