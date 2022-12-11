@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ButtonStyled, InputMaterial, Main } from "./styled";
+import { ButtonStyled, Header, InputMaterial, Main } from "./styled";
 import useForm from '../../Hooks/useForm'
 import axios from "axios";
 import { BASE_URL } from "../../Constants/url";
@@ -49,6 +49,7 @@ const SignUpAdress = () => {
 
     return(
         <Main>
+            <Header back />
             <p>Meu Endereço</p>
             <form onSubmit={onSubmitFormAdress}>
             <InputMaterial 

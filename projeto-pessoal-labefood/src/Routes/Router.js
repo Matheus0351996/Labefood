@@ -12,11 +12,11 @@ import SignUpAdress from "../Pages/SignUpAdress/signUpAdress"
     return(
         <BrowserRouter>
             <Routes>
-                <Route index element={<Login/>}/>
+                <Route index element={<Feed/>}/>
                 <Route path="/signUp" element={<SignUp/>}/>
                 <Route path="/signUp/adress" element={<SignUpAdress/>}/>
                 {/* <Route path="/adressEdit/:id" element={<AdressEdit/>}/> */}
-                <Route path="/feed" element={<Feed/>}/>
+                <Route path="/login" element={<Login/>}/>
                 <Route path="/feed/:restaurantsId" element={<Restaurants/>}/>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/cart" element={<Cart/>}/>

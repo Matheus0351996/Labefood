@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useForm from "../../Hooks/useForm";
-import {ButtonStyled, DivPassword, Form, InputMaterial, Main} from './styled'
+import {ButtonStyled, DivPassword, Form, Header, InputMaterial, Main} from './styled'
 import  IconButton from "@mui/material/IconButton";
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -76,6 +76,7 @@ const SignUp = () => {
 
     return(
         <Main>
+            <Header back />
             <p>Cadastrar</p>
             <Form onSubmit={onSubmitForm}>
                 <InputMaterial 

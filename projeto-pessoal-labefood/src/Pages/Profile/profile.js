@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Header, Main } from "./styled";
 
 const Profile = () => {
     return(
-        <div>
+        <Main>
+            <Header title={"Meu perfil"} />
             Profile
-        </div>
+        </Main>
     )
 }
 export default Profile
