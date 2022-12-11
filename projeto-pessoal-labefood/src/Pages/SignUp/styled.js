@@ -50,3 +50,6 @@ width:80%;
 align-items: center;
 justify-content: space-between;
 `
+export const Header = styled.div`
+
+`

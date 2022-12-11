@@ -9,6 +9,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 
+
 form{
     margin-top: 50px;
     display:flex;
@@ -31,4 +32,8 @@ export const ButtonStyled = styled(Button)`
     color:#000;
     background-color:#E8222E;
  }
+`
+
+export const Header = styled.div`
+
 `
