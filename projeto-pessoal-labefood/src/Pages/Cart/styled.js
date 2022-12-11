@@ -97,3 +97,6 @@ export const Form = styled.form`
         width:20%
     }
 `
+export const MenuProfilePage = styled.div`
+
+`

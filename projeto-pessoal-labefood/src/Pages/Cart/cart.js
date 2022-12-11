@@ -3,7 +3,8 @@ import React, {useState} from "react";
 import CardCart from '../../Components/CardCart/cardCart'
 import { BASE_URL } from "../../Constants/url";
 import { useRequestData } from "../../Hooks/useRequestData";
-import { CartConfig, Main, MainCart, InfoProfile, CartInfo, Payment, InfoRestaurant, EmptyCart, Freight, Total, Form, Header } from "./styled";
+import { CartConfig, Main, MainCart, InfoProfile, CartInfo, Payment, InfoRestaurant, EmptyCart, Freight, Total, Form, Header, MenuMain } from "./styled";
+import Menu from '../../Components/Menu/menu'
 
 const Cart = () => {
 
@@ -52,9 +53,7 @@ const Cart = () => {
 
     return(
         <Main>
-            {/* <MainCart>
-                    <p>Meu carrinho</p>
-            </MainCart> */}
+          
             <Header title={'Meu carrinho'} back />
             <CartConfig>
                 <InfoProfile>
@@ -113,6 +112,7 @@ const Cart = () => {
                         </Form>
                 </Payment>
             </CartConfig>
+            <Menu page={'cart'}/>
         </Main>
               
     )

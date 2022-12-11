@@ -5,6 +5,7 @@ import { BASE_URL } from "../../Constants/url";
 import Header from "../../Header/header";
 import { useProtectedPage } from "../../Hooks/useProtectedPage";
 import { BoxInputSearch, ContainerFeed, InputSearch, Menu, MenuItem, WrapperCardsRestaurant } from "./styled";
+import MenuMain from '../../Components/Menu/menu'
 
 const Feed = () => {
     const [restaurants, setRestaurants] = useState([])
@@ -118,22 +119,8 @@ const Feed = () => {
                  filterRestaurant
                 }
             </WrapperCardsRestaurant>
+            <MenuMain  page={"feed"}/>
         </ContainerFeed>
     )
 }
 export default Feed
-
-
-
-
-
-
-     {/* <InputMaterial 
-                id="outlined-basic"
-                name='restaurants'   
-                type={'text'}
-                // value = {restaurants}
-                variant="outlined" 
-                placeholder={'Restaurante'}
-                onChange={(event)=>setRestaurants(event.target.value)}
-            /> */}
