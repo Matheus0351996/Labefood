@@ -26,4 +26,11 @@ export const goToBack = (navigate) =>{
     navigate(-1)
 }
 
+export const goToCart = (navigate) =>{
+    navigate("/cart")
+}
+
+export const goToProfile = (navigate) =>{
+    navigate("/profile")
+}
 
