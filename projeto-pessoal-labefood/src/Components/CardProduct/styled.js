@@ -19,6 +19,8 @@ align-items:center;
 border: 1px solid red;
 width:2.063rem;
 height:2.063rem;
+border-radius: 8px 0 8px 0;
+color: red;
 `
 export const BoxNameQuantity = styled.div`
 display:flex;
@@ -34,6 +36,7 @@ line-height: normal;
 letter-spacing: -0.39px;
 color:red;
 padding-bottom: 0.25rem;
+padding-top:1rem;
 `
 
 export const BoxInform = styled.div`
@@ -67,11 +70,17 @@ justify-content:space-between;
 export const InformPrice = styled.p`
 
 `
-export const InformButton = styled.button`
+export const InformAddItemButton = styled.button`
 width:5.625rem;
 height:1.938rem;
 border-radius: 8px 0 8px 0;
 background-color:white;
 outline:0;
 border: 1px solid black;
+`
+
+
+export const InformRemoveItemButton = styled(InformAddItemButton)`
+    border: 1px solid red;
+    color:red;
 `
