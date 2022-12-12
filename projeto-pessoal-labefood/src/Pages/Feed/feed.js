@@ -23,7 +23,7 @@ const Feed = () => {
             }
         })
         .then((res)=>{
-            console.log(res.data);
+           
             setRestaurants(res.data.restaurants)
             filterCategory(res.data.restaurants)
         })

@@ -12,7 +12,8 @@ const Restaurant = () => {
     const [restaurant, setRestaurant] = useState({})
     const [categories, setCategories] = useState([])
 
-
+    // const {requests} = useGlobal()
+    // const {addToCart} = requests
     
     const getRestaurant = () => {
         axios.get(`${BASE_URL}/restaurants/${restaurantsId}`,{
@@ -62,7 +63,10 @@ const Restaurant = () => {
                                 return product.category === category
                             })
                             .map((product) =>{
-                                return <CardProduct product={product} key={product.id}
+                                return <CardProduct 
+                                product={product} 
+                                key={product.id}
+                                restaurant={restaurant}
                                 />
                             })
                         }
