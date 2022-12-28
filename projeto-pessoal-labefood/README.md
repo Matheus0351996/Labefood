@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Rappi4
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://user-images.githubusercontent.com/99002422/209713226-e8d2a0f8-8534-4883-971e-1e4d6d60ca2c.png)
 
-## Available Scripts
+## :book: Descrição:
 
-In the project directory, you can run:
+O projeto Labefood consiste na criação de um  site semelhante a um aplicativo já existente (Ifood). A idéia era criar um site com o conceito de mobile first, o mesmo foi desenvolvido apartir da idéia de acesso em dipositivos mobile como o iphone 12 Pro.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## :page_facing_up: Páginas
+<details>
+  <summary>Páginas</summary>
+  
+  ![Página de login](https://user-images.githubusercontent.com/99002422/209701008-a39d462d-dcd8-4653-aa9e-99575e09e510.png)
+  
+  ![Página de feed](https://user-images.githubusercontent.com/99002422/209700701-64c5c457-0152-42bc-924c-51d2218cef4d.png)
+  
+  ![Página de cadastro](https://user-images.githubusercontent.com/99002422/209709437-f96ff9b0-eacf-4e00-8ae8-0904282647b8.png)
+  
+  ![Página de cadastro de endereço](https://user-images.githubusercontent.com/99002422/209709556-9bc13ce8-bfab-422f-b7d4-ed970d00300f.png)
 
-### `npm test`
+  ![Página do restaurante](https://user-images.githubusercontent.com/99002422/209709717-5bce028a-3731-45e9-ae66-d718fcd4293a.png)
+  
+  ![Página de carrinho](https://user-images.githubusercontent.com/99002422/209709902-c6291ff2-195e-4658-a195-53c61cb5928c.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</details>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :computer: Como acessar.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clique no link abaixo.
+### https://labefood-natal.surge.sh/
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ao clicar no link acima,o usuário sera redirecionado para a página de login.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Para a experiência ideal, recomenda-se acessar o mesmo através de um dispositivo mobile, ou através do seu navegador, clicar com o botão direito e selecionar a opção inspecionar, ao faze-lo, clique em dimensions e selecione qualquer uma destas opções ( Iphone SE, Iphone XR, Iphone 12 PRO, Pixel 5) ou qualquer outra opção de dispositivo mobile cujo o tamanho seja compativel a um smarthphone.
+O site pode ser acessado através de outros dispositivos, mas isto poderá acarretar em uma experiência diferente do que foi previamente planejado para o usuário.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Use as seguintes credenciais para logar.
 
-## Learn More
+Email:testeacesso@gmail.com
+Senha:123456
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ou crie uma conta nova para acesso em
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://labefood-natal.surge.sh/signUp/
 
-### Code Splitting
+e logue através do seguinte link
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+https://labefood-natal.surge.sh/login/
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## :technologist: O que foi implementado:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+:heavy_check_mark: React
 
-### Advanced Configuration
+:heavy_check_mark: Mobile First
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+:heavy_check_mark: React Router
 
-### Deployment
+:heavy_check_mark: Autenticação
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+:heavy_check_mark: Biblioteca UI ( Material UI )
 
-### `npm run build` fails to minify
+:heavy_check_mark: Formulários com Validação
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+:heavy_check_mark: Hooks useState e useEffect
+
+:heavy_check_mark: Consumo de API ( https://documenter.getpostman.com/view/7549981/SWTEdGtT/) 
+
+
+
+## :hammer_and_wrench: Funcionalidades 
+
+:wrench: Filtro de busca
+
+:wrench: Filtragem por categoria
+
+:wrench: Sistema de Login
+
+:wrench: Sistema de Cadastro de usuário e endereço
+
+:wrench: Modal de seleção de quantidade
+
+:wrench: Carrinho
+
+## :wink: Autor
+
+
+
+
+
+ [<img src="https://user-images.githubusercontent.com/99002422/209822364-d4f98fbf-1c2f-4a0c-9457-73905a83031a.jpg" width=115><br><sub>Matheus Natal Santos</sub>](https://github.com/Matheus0351996) 
+
+
+
+
+
